@@ -13,13 +13,12 @@ const SetupScreen = ({ players, onAddPlayer, onRemovePlayer, onStartGame, gameMo
     if (!trimmed) return;
 
     if (players.some(p => p.name.toLowerCase() === trimmed.toLowerCase())) {
-      setError('Agent ID already taken');
+      setError('Name already taken');
       setTimeout(() => setError(''), 2500);
       return;
     }
-
     if (players.length >= 10) {
-      setError('Squad capacity reached');
+      setError('Max 10 players');
       setTimeout(() => setError(''), 2500);
       return;
     }
@@ -32,52 +31,52 @@ const SetupScreen = ({ players, onAddPlayer, onRemovePlayer, onStartGame, gameMo
   return (
     <div className="screen-container setup-screen">
       <motion.div
-        initial={{ y: -30, opacity: 0 }}
+        initial={{ y: -24, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
         className="hero-section"
       >
-        <h1 className="title title-glitch" data-text="IMPOSTER">IMPOSTER</h1>
+        <h1 className="title">IMPOSTER</h1>
       </motion.div>
 
       {/* Mode Selector */}
       <motion.div
-        initial={{ opacity: 0, y: 12 }}
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1 }}
+        transition={{ delay: 0.08 }}
         className="mode-selector card glass"
       >
         <p className="section-title">
-          <Users size={12} /> Mission Type
+          <Users size={11} /> Mission Type
         </p>
         <div className="mode-buttons">
           <button
             className={gameMode === 'WORD' ? 'active' : ''}
             onClick={() => setGameMode('WORD')}
           >
-            <Zap size={12} /> WORD
+            <Zap size={11} /> Word
           </button>
           <button
             className={gameMode === 'SENTENCE' ? 'active' : ''}
             onClick={() => setGameMode('SENTENCE')}
           >
-            <Zap size={12} /> SENTENCE
+            <Zap size={11} /> Sentence
           </button>
         </div>
       </motion.div>
 
       {/* Player Setup */}
       <motion.div
-        initial={{ opacity: 0, y: 12 }}
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
+        transition={{ delay: 0.14 }}
         className="player-setup-card card glass"
       >
         <form onSubmit={handleAdd} className="input-row">
           <div className="input-wrapper">
             <input
               type="text"
-              placeholder="Agent codename..."
+              placeholder="Player name…"
               value={newName}
               onChange={(e) => setNewName(e.target.value)}
               maxLength={12}
@@ -85,7 +84,7 @@ const SetupScreen = ({ players, onAddPlayer, onRemovePlayer, onStartGame, gameMo
             />
             {newName && (
               <button type="button" className="clear-btn" onClick={() => setNewName('')}>
-                <X size={12} />
+                <X size={11} />
               </button>
             )}
           </div>
@@ -95,7 +94,7 @@ const SetupScreen = ({ players, onAddPlayer, onRemovePlayer, onStartGame, gameMo
             disabled={!newName.trim()}
             whileTap={{ scale: 0.9 }}
           >
-            <Plus size={20} />
+            <Plus size={18} />
           </motion.button>
         </form>
 
@@ -114,11 +113,8 @@ const SetupScreen = ({ players, onAddPlayer, onRemovePlayer, onStartGame, gameMo
 
         <div className="player-list-container">
           <div className="list-header">
-            AGENTS ENLISTED —&nbsp;
-            <span style={{ color: players.length >= 10 ? 'var(--blood)' : 'var(--plasma)' }}>
-              {players.length}
-            </span>
-            <span style={{ color: 'var(--text-muted)' }}>/10</span>
+            Players — <span style={{ color: players.length >= 10 ? 'var(--red)' : 'var(--indigo)' }}>{players.length}</span>
+            <span style={{ color: 'var(--ink-4)' }}>/10</span>
           </div>
           <div className="player-list">
             <AnimatePresence mode="popLayout">
@@ -126,61 +122,47 @@ const SetupScreen = ({ players, onAddPlayer, onRemovePlayer, onStartGame, gameMo
                 <motion.div
                   key={p.name}
                   layout
-                  initial={{ x: -20, opacity: 0 }}
+                  initial={{ x: -16, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
-                  exit={{ x: 20, opacity: 0, height: 0, marginBottom: 0 }}
-                  transition={{ duration: 0.2 }}
+                  exit={{ x: 16, opacity: 0, height: 0, marginBottom: 0 }}
+                  transition={{ duration: 0.18 }}
                   className="player-item"
                 >
                   <div className="player-info">
-                    <User size={14} className="user-icon" />
+                    <User size={13} className="user-icon" />
                     <span>{p.name}</span>
                   </div>
-                  <button
-                    onClick={() => onRemovePlayer(i)}
-                    className="remove-btn"
-                    type="button"
-                  >
-                    <Trash2 size={14} />
+                  <button onClick={() => onRemovePlayer(i)} className="remove-btn" type="button">
+                    <Trash2 size={13} />
                   </button>
                 </motion.div>
               ))}
             </AnimatePresence>
-            {players.length === 0 && (
-              <p className="empty-msg">// no agents enlisted //</p>
-            )}
+            {players.length === 0 && <p className="empty-msg">No players yet</p>}
           </div>
         </div>
       </motion.div>
 
       <motion.button
-        initial={{ opacity: 0, y: 12 }}
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3 }}
+        transition={{ delay: 0.2 }}
         whileHover={{ scale: 1.01 }}
         whileTap={{ scale: 0.97 }}
         className="primary big start-btn"
         onClick={onStartGame}
         disabled={players.length < 3}
       >
-        <Play size={18} /> DEPLOY MISSION
+        <Play size={17} /> Start Game
       </motion.button>
 
       {players.length < 3 && (
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          style={{
-            textAlign: 'center',
-            fontFamily: 'var(--font-mono)',
-            fontSize: '0.65rem',
-            letterSpacing: '2px',
-            color: 'var(--text-muted)',
-            marginTop: '-12px'
-          }}
-        >
-          MINIMUM 3 AGENTS REQUIRED
-        </motion.p>
+        <p style={{
+          textAlign: 'center', fontFamily: 'var(--font-mono)',
+          fontSize: '0.65rem', letterSpacing: '1.5px', color: 'var(--ink-4)', marginTop: '-6px',
+        }}>
+          Minimum 3 players required
+        </p>
       )}
     </div>
   );
