@@ -272,6 +272,90 @@ export const wordData = [
   { value: "Bandage", hint: "Wrap" },
   { value: "Ambulance", hint: "Siren" },
   { value: "Stethoscope", hint: "Listen" },
+
+  // ─── NEW CATEGORY: POLITICIANS ───
+  { value: "Narendra Modi", hint: "Speech" },
+  { value: "Rahul Gandhi", hint: "Debate" },
+  { value: "Amit Shah", hint: "Strategy" },
+  { value: "Arvind Kejriwal", hint: "Delhi" },
+  { value: "Yogi Adityanath", hint: "State" },
+  { value: "Mamata Banerjee", hint: "Bengal" },
+  { value: "Nitish Kumar", hint: "Alliance" },
+  { value: "Lalu Prasad Yadav", hint: "Rail" },
+  { value: "Sonia Gandhi", hint: "Congress" },
+  { value: "Smriti Irani", hint: "Minister" },
+
+  // ─── NEW CATEGORY: FAMOUS PEOPLE ───
+  { value: "Ratan Tata", hint: "Legacy" },
+  { value: "Mukesh Ambani", hint: "Wealth" },
+  { value: "Gautam Adani", hint: "Ports" },
+  { value: "Sundar Pichai", hint: "Search" },
+  { value: "Satya Nadella", hint: "Cloud" },
+  { value: "APJ Abdul Kalam", hint: "Missile" },
+  { value: "Neeraj Chopra", hint: "Throw" },
+  { value: "Mary Kom", hint: "Punch" },
+  { value: "PV Sindhu", hint: "Smash" },
+  { value: "Anand Kumar", hint: "Math" },
+
+  // ─── NEW CATEGORY: COUNTRIES ───
+  { value: "India", hint: "Diverse" },
+  { value: "USA", hint: "Dollar" },
+  { value: "China", hint: "Factory" },
+  { value: "Japan", hint: "Tech" },
+  { value: "Germany", hint: "Cars" },
+  { value: "France", hint: "Paris" },
+  { value: "UK", hint: "Crown" },
+  { value: "Australia", hint: "Kangaroo" },
+  { value: "Canada", hint: "Maple" },
+  { value: "Brazil", hint: "Football" },
+
+  // ─── NEW CATEGORY: STATES ───
+  { value: "Uttar Pradesh", hint: "Population" },
+  { value: "Maharashtra", hint: "Mumbai" },
+  { value: "Bihar", hint: "History" },
+  { value: "Punjab", hint: "Fields" },
+  { value: "Rajasthan", hint: "Desert" },
+  { value: "Gujarat", hint: "Business" },
+  { value: "Tamil Nadu", hint: "Temple" },
+  { value: "Karnataka", hint: "IT" },
+  { value: "Kerala", hint: "Backwater" },
+  { value: "West Bengal", hint: "Culture" },
+
+  // ─── NEW CATEGORY: MOVIES ───
+  { value: "Dangal", hint: "Wrestle" },
+  { value: "Pathaan", hint: "Spy" },
+  { value: "RRR", hint: "Revolt" },
+  { value: "KGF", hint: "Gold" },
+  { value: "3 Idiots", hint: "College" },
+  { value: "Bahubali", hint: "Kingdom" },
+  { value: "Pushpa", hint: "Smuggle" },
+  { value: "Drishyam", hint: "Cover" },
+  { value: "War", hint: "Agent" },
+  { value: "Jawan", hint: "Action" },
+
+  // ─── NEW CATEGORY: STATIONERY ───
+  { value: "Pencil", hint: "Graphite" },
+  { value: "Eraser", hint: "Remove" },
+  { value: "Sharpener", hint: "Point" },
+  { value: "Scale", hint: "Measure" },
+  { value: "Marker", hint: "Highlight" },
+  { value: "Glue Stick", hint: "Stick" },
+  { value: "Stapler", hint: "Pin" },
+  { value: "Highlighter", hint: "Focus" },
+  { value: "Sketch Pen", hint: "Color" },
+  { value: "Paper Clip", hint: "Hold" },
+
+  // ─── NEW CATEGORY: DAILY USE PRODUCTS ───
+  { value: "Colgate", hint: "Teeth" },
+  { value: "Lux Soap", hint: "Bath" },
+  { value: "Surf Excel", hint: "Wash" },
+  { value: "Amul Butter", hint: "Spread" },
+  { value: "Parle G", hint: "Biscuit" },
+  { value: "Dettol", hint: "Clean" },
+  { value: "Clinic Plus", hint: "Hair" },
+  { value: "Aashirvaad Atta", hint: "Flour" },
+  { value: "Tata Salt", hint: "Iodine" },
+  { value: "Dabur Honey", hint: "Sweet" },
 ];
 
 
@@ -421,6 +505,42 @@ export const sentenceData = [
   { value: "I hide snacks in my room", hint: "Stash" },
   { value: "I fight with siblings for remote", hint: "Battle" },
   { value: "I sing while taking shower", hint: "Echo" },
+
+  // ─── NEW CATEGORY: POLITICIANS ───
+  { value: "I listen to Narendra Modi speeches", hint: "Leader" },
+  { value: "I watch debates of Rahul Gandhi", hint: "Debate" },
+  { value: "I follow Amit Shah strategies", hint: "Plan" },
+
+  // ─── NEW CATEGORY: FAMOUS PEOPLE ───
+  { value: "I admire Ratan Tata personality", hint: "Legacy" },
+  { value: "I read about APJ Abdul Kalam", hint: "Inspire" },
+  { value: "I follow Sundar Pichai journey", hint: "Tech" },
+
+  // ─── NEW CATEGORY: COUNTRIES ───
+  { value: "I want to visit USA someday", hint: "Travel" },
+  { value: "I like Japanese technology", hint: "Advance" },
+  { value: "I watch French movies sometimes", hint: "Cinema" },
+
+  // ─── NEW CATEGORY: STATES ───
+  { value: "I want to visit Rajasthan deserts", hint: "Sand" },
+  { value: "I love Kerala backwaters", hint: "Boat" },
+  { value: "Mumbai is in Maharashtra", hint: "City" },
+
+  // ─── NEW CATEGORY: MOVIES ───
+  { value: "I watched Dangal movie twice", hint: "Repeat" },
+  { value: "I like Bahubali action scenes", hint: "Epic" },
+  { value: "Pushpa dialogues are famous", hint: "Style" },
+
+  // ─── NEW CATEGORY: STATIONERY ───
+  { value: "I write notes with pen", hint: "Ink" },
+  { value: "I sharpen pencil daily", hint: "Point" },
+  { value: "I highlight important lines", hint: "Focus" },
+
+  // ─── NEW CATEGORY: DAILY PRODUCTS ───
+  { value: "I brush using Colgate daily", hint: "Clean" },
+  { value: "I wash clothes with Surf Excel", hint: "Wash" },
+  { value: "I eat Parle G with tea", hint: "Dip" },
+
 ];
 
 
